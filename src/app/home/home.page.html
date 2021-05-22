@@ -23,7 +23,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Wybierz Walute</ion-label>
-          <ion-select placeholder="Waluta" okText="Potwierdź" cancelText="Anuluj">
+          <ion-select [(ngModel)]="currencyType" placeholder="Waluta" okText="Potwierdź" cancelText="Anuluj">
             <ion-select-option value="USD">USD</ion-select-option>
             <ion-select-option value="EUR">EUR</ion-select-option>
             <ion-select-option value="CHF">CHF</ion-select-option>
@@ -40,7 +40,7 @@
       <ion-col size="6" class="ion-text-end">
         Wynik
       </ion-col>
-      <ion-col size="6" class="ion-text-start">{{result}}</ion-col>
+      <ion-col size="6" class="ion-text-start">{{result | number: '1.0-2'}}</ion-col>
     </ion-row>
   </ion-grid>
 

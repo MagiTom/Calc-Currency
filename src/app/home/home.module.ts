@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { FirstComponent } from '../components/first/first.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    HttpClientModule
   ],
   declarations: [HomePage, FirstComponent]
 })

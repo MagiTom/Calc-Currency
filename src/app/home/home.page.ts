@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { NbpService } from '../services/nbp.service';
 
 @Component({
   selector: 'app-home',
@@ -10,23 +10,24 @@ export class HomePage implements OnInit {
 
   currencyInputValue:any;
   result:any;
+  currencyType;
 
-  constructor(private http:HttpClient) {}
+  constructor(private nbp:NbpService) {}
 
   ngOnInit(){
-    this.getCurrency();
+  this.calc();
   }
 
   calc(){
-  this.result = this.currencyInputValue;
+   this.nbp.getCurrency(this.currencyType).subscribe(result => {
+     
+    this.result = this.currencyInputValue * Object(result).rates[0].mid;
+    })
+
+
   }
 
-  getCurrency(){
-    this.http.get<any>(`http://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json`).subscribe(data => {
-     
-    console.log(data)
-    })
-  }
+
 
 
 
