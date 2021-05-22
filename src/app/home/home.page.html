@@ -1,0 +1,57 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Kalkulator walut</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <img src="./../../assets/logo.png" alt="logo WSB" >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Podaj wartość</ion-label>
+          <ion-input type="number" [(ngModel)]="currencyInputValue"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Wybierz Walute</ion-label>
+          <ion-select placeholder="Waluta" okText="Potwierdź" cancelText="Anuluj">
+            <ion-select-option value="USD">USD</ion-select-option>
+            <ion-select-option value="EUR">EUR</ion-select-option>
+            <ion-select-option value="CHF">CHF</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <ion-button (click)="calc()" expand="block" shape="round">Przelicz</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-text-end">
+        Wynik
+      </ion-col>
+      <ion-col size="6" class="ion-text-start">{{result}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>WSB 2021</ion-title>
+  </ion-toolbar>
+</ion-footer>
